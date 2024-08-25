@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Insurance Bill</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Detect Transaction Record Anomaly</h1>
+
+     <!-- Form to enter new data for predictions  -->
+     <form action="{{ url_for('predict')}}" method="POST">
+      <input type="text" name="FISCAL_YR" placeholder="Fiscal Year" required="required" /><br>
+      <input type="text" name="FISCAL_MTH" placeholder="Fiscal Month" required="required" /><br>
+      <!-- <input type="text" name="DEPT_NAME" placeholder="Department Name" required="required"/><br> -->
+      <input type="text" name="DIV_NAME" placeholder="Division Name" required="required" /><br>
+      <input type="text" name="MERCHANT" placeholder="Merchant" required="required" /><br>
+      <input type="text" name="CAT_DESC" placeholder="Category Description" required="required" /><br>
+      <input type="text" name="TRANS_DT" placeholder="Transaction Date (YYYY-MM-DD)" required="required" /><br>
+      <input type="text" name="AMT" placeholder="Amount" required="required" /><br>
+  
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{pred}}
+
+</body>
+</html>
